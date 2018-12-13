@@ -23,18 +23,11 @@ def study_image():
     ]}
 
     response = requests.post(api_url, headers=headers, data=json.dumps(data))
-    
+
     response_dict = json.loads(response.content)
     response_dict["outputs"][0]["data"]["concepts"]
 
-
-    # At this point you have the image_url value from the front end
-    # Your job now is to send this information to the Clarifai API
-    # and read the result, make sure that you read and understand the
-    # example we covered in the slides! 
-
-    # YOUR CODE HERE!
-    
+        
     return render_template('home.html', results=response_dict)
 
 if __name__ == '__main__':
